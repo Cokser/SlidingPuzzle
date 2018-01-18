@@ -1,0 +1,144 @@
+@mixin base-font($size, $color ) {
+  font-family: "Liberation Sans";
+  font-size: $size;
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin flex($direction, $content, $items ) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+}
+
+$desktop: 1280px;
+$laptop: 1024px;
+$tablet: 768px;
+$smart-phone: 480px;
+$phone: 320px;
+
+@mixin media-width($width-desktop,
+                   $width-laptop,
+                   $width-tablet,
+                   $width-smart-phone,
+                   $width-phone) {
+
+  @media (min-width: $desktop) {
+    width: $width-desktop;
+  }
+
+  @media (min-width: $laptop) and (max-width: $desktop+1px) {
+    width: $width-laptop;
+  }
+
+  @media (min-width: $tablet) and (max-width: $laptop+1px) {
+    width: $width-tablet;
+  }
+
+  @media (min-width: $smart-phone) and (max-width: $tablet+1px) {
+    width: $width-smart-phone;
+  }
+
+  @media (min-width: $phone) and (max-width: $smart-phone+1px) {
+    width: $phone;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.scores-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.scores-article {
+  @include flex(column, space-between, center);
+}
+
+.scores-header {
+  @include flex(column, space-between, center);
+  //@include media-width(1200px, 1000px,740px, 460px, 300px);
+  width: 100%;
+  background: #53adff;
+  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.35);
+}
+
+.scores-title {
+  @include base-font(30px, #fff);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.scores-content {
+  @include flex(column, space-between, center);
+  @include media-width(1000px, 800px, 640px, 400px, 300px);
+  margin-top: 20px;
+  background: #5377e0;
+  box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.65);
+}
+
+.scores-list-item {
+  @include flex(column, space-between, center);
+}
+
+.scores-result {
+  @include base-font(30px, #fff);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.scores-list {
+  margin: 0;
+  padding: 0;
+}
+
+.stat-info {
+  @include base-font(25px, #fff);
+  width: 100%;
+}
+
+.btn-section {
+  @include media-width(400px, 400px, 400px,400px, 300px);
+  @include flex(row, space-around, center);
+}
+
+.opt-button {
+  @include base-font(20px, #000);
+  border: 10px solid #63ffda;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+
+  &:focus {
+    border: 10px solid #35aaff;
+    transition: 0.4s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  &:hover {
+    border: 10px solid #35aaff;
+    transition: 0.4s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  &:active {
+    border: 10px solid #2556ff;
+    transition: 0.3s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+  }
+
+  @media (max-width: $phone) {
+    width: 100px;
+    height: 100px;
+    font-size: 15px;
+
+  }
+}

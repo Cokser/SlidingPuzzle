@@ -1,0 +1,13 @@
+<div class="start-screen-container">
+  <form class="game-config" [formGroup]="puzzleConfigForm" (ngSubmit)="startPuzzle()">
+    <div class="config-field">
+      <input class="config-input name-input" formControlName="name" type="text" id="name" placeholder="Name">
+    </div>
+    <div class="config-field">
+      <input class="config-input" formControlName="rows" type="number" min="3" max="10" placeholder="Rows">
+      <div class="circle"></div>
+      <input class="config-input" formControlName="cols" type="number" min="3" max="10" placeholder="Cols">
+    </div>
+    <button type="submit" class="opt-button">Start</button>
+  </form>
+</div>

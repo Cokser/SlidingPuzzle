@@ -1,0 +1,26 @@
+<div class="puzzle-container">
+  <div class="options-bar">
+    <div class="timer-container">
+      <p class="timer-title">Score: {{ticks}}</p>
+    </div>
+    <button class="opt-button" (click)="restartPuzzle()">Restart</button>
+    <button class="opt-button" (click)="startNew()">New</button>
+  </div>
+  <div class="overlay" *ngIf="shufflingFlag"></div>
+  <div class="modal-warning" *ngIf="shufflingFlag">
+    <p class="warning-msg" >Wait for shuffling...</p>
+  </div>
+  <table class="puzzle-table">
+    <tr class="row" *ngFor="let row of puzzleState">
+      <ng-container *ngFor="let col of row">
+        <td class="col" *ngIf="col.id!=voidElem.id; else voidItem" (click)="takeStep($event, col)">
+          {{col.id}}
+        </td>
+        <ng-template #voidItem>
+          <td class="void-elem">
+          </td>
+        </ng-template>
+      </ng-container>
+    </tr>
+  </table>
+</div>

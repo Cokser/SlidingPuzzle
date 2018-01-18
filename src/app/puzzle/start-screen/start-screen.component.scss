@@ -1,0 +1,85 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-screen-container {
+  //@extend .flex-column;
+  //height: 100%;
+  //width: 100%;
+}
+
+.game-config {
+  @extend .flex-column;
+
+}
+
+.config-field {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.config-label {
+  font-size: 25px;
+
+}
+
+.config-input {
+  padding: 10px;
+  font-size: 25px;
+  outline: none;
+  width: 85px;
+  height: 30px;
+  border: none;
+  border-bottom: 3px solid #f8ff8d;
+
+  &:focus {
+    border-bottom: 3px solid #ffbc6a;
+    transition: 0.3s ease-out;
+  }
+}
+
+.circle {
+  background: #63ffda;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+
+}
+.name-input {
+  width: 100%;
+}
+
+.opt-button {
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 10px solid #63ffda;
+  border-radius: 50%;
+  color: #000;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  font-size: 20px;
+  &:focus {
+    border: 10px solid #35aaff;
+    transition: 0.4s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.35);
+  }
+  &:hover {
+    border: 10px solid #35aaff;
+    transition: 0.4s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.35);
+  }
+  &:active {
+    border: 10px solid #2556ff;
+    transition: 0.3s ease-out;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,1);
+  }
+}

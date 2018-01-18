@@ -1,0 +1,22 @@
+<div class="scores-container">
+  <article class="scores-article" *ngIf="currentStat">
+    <header class="scores-header">
+      <h1 class="scores-title">congratulation {{currentStat.name}}!</h1>
+    </header>
+    <section class="scores-content">
+      <p class="scores-result">Your Statistics</p>
+      <ul class="scores-list" *ngIf="currentStat">
+        <li class="scores-list-item">
+          <p class="stat-info">score: {{currentStat.score}}</p>
+          <p class="stat-info">date: {{currentStat.date | date: 'dd/MM/yyyy HH:mm'}}</p>
+          <p class="stat-info">size: {{currentStat.size[0]}} x {{currentStat.size[1]}}</p>
+          <p class="stat-info">steps: {{currentStat.steps}}</p>
+        </li>
+      </ul>
+    </section>
+    <section class="btn-section">
+      <button class="opt-button" (click)="restartPuzzle()">Restart</button>
+      <button class="opt-button" (click)="startPuzzle()">Start New</button>
+    </section>
+  </article>
+</div>
