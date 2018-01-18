@@ -25,7 +25,6 @@ function numberValidator(c: AbstractControl) {
 })
 export class StartScreenComponent implements OnInit {
 
-  public gameStarted = false;
   public puzzleConfigForm: FormGroup;
 
   constructor(public puzzleService: PuzzleService,

@@ -36,6 +36,5 @@ export class EndScreenComponent implements OnInit {
   private getStats() {
     this.stats = this.puzzleService.getStats();
     this.currentStat = this.stats[this.stats.length - 1];
-    console.log(this.currentStat);
   }
 }
